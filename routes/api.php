@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BoxController;
 use App\Http\Controllers\API\BenefitController;
+use App\Http\Controllers\API\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,9 @@ Route::group(['namespace' => 'API'], function ($router) {
 
     Route::get('boxes', [BoxController::class, 'index']);
     Route::post('boxes', [BoxController::class, 'store']);
+    Route::post('boxes/custom', [BoxController::class, 'custom']);
 
     Route::get('benefits', [BenefitController::class, 'index']);
+    Route::get('products', [ProductController::class, 'index']);
 
 });
