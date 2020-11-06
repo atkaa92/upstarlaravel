@@ -35,4 +35,14 @@ class Box extends Model
     {
         return $this->belongsToMany(Product::class)->withPivot('count');
     }
+
+    /**
+     * Get box period
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
+    public function period()
+    {
+        return $this->belongsTo(ReceiveOption::class, 'resubscribe_period');    
+    }
 }
